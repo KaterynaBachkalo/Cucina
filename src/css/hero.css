@@ -1,0 +1,343 @@
+ .hero {
+     width: 100%;
+     padding-top: 56px;
+     background: linear-gradient(228.52deg, rgba(111, 102, 102, 0.9) 4.71%, rgba(16, 15, 15, 0.9) 39.77%, rgba(16, 15, 15, 0.9) 44.21%);
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero {
+         padding-top: 80px;
+     }
+ }
+
+ .hero-container {
+     position: relative;
+
+     padding-top: 24px;
+     padding-bottom: 39px;
+
+     background-image: url('../img/hero/Frame74_mob@1x.png');
+     background-repeat: no-repeat;
+     background-position: top 137px left 0px;
+     background-size: 342px 273px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-container {
+         background-image: none;
+         padding-top: 32px;
+         padding-bottom: 32px;
+
+     }
+ }
+
+ @media only screen and (min-width: 1140px) {
+     .hero-container {
+         display: flex;
+         flex-direction: row;
+         padding-top: 72px;
+         padding-bottom: 101px;
+     }
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-wrapper {
+         margin-bottom: 74px;
+     }
+ }
+
+ @media only screen and (min-width: 1140px) {
+     .hero-wrapper {
+         margin-bottom: 0;
+     }
+ }
+
+ .hero-mob {
+     display: flex;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-mob {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+     }
+ }
+
+ .hero-left-side {
+     display: flex;
+     flex-direction: column;
+     max-width: 200px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-left-side {
+         max-width: 447px;
+     }
+ }
+
+ @media only screen and (min-width: 1140px) {
+     .hero-left-side {
+         margin-right: 160px;
+     }
+ }
+
+ .hero-title {
+     display: flex;
+     align-items: center;
+     font-weight: 500;
+     font-size: 24px;
+     line-height: 1.22;
+
+     margin-top: 40px;
+     margin-bottom: 16px;
+ }
+
+ @media only screen and (min-width: 414px) {
+     .hero-title {
+         display: flex;
+         align-items: center;
+         font-size: 30px;
+
+         margin-top: 40px;
+         margin-bottom: 16px;
+     }
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-title {
+         display: flex;
+         font-size: 64px;
+
+         margin-top: 40px;
+         margin-bottom: 24px;
+     }
+ }
+
+ @media only screen and (min-width: 1140px) {
+     .hero-title {
+         margin-top: 28px;
+         margin-bottom: 30px;
+     }
+ }
+
+ .hero-title::before {
+     content: '';
+     display: flex;
+     height: 66px;
+     flex-direction: column;
+     border: 1px solid var(--element-color);
+
+     margin-right: 8px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-title::before {
+         height: 151px;
+
+         margin-right: 12px;
+     }
+ }
+
+ .hero-text {
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 1.22;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-text {
+         position: relative;
+         font-weight: 300;
+         font-size: 36px;
+     }
+ }
+
+ .hero-text span {
+     font-weight: 900;
+
+     color: rgba(188, 26, 26, 0.71);
+ }
+
+ .hero-picture img {
+     min-width: 186px;
+     height: 100%;
+     margin-left: -32px;
+ }
+
+ @media only screen and (min-width: 414px) {
+     .hero-picture img {
+         width: 100%;
+         height: 100%;
+         margin-left: 0;
+     }
+ }
+
+ .hero-picture {
+     padding-bottom: 24px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-picture {
+         position: relative;
+         order: 1;
+         padding-top: 0px;
+         padding-bottom: 0;
+         margin-left: 0;
+     }
+ }
+
+ .ingredients-list {
+     display: none;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .ingredients-list {
+         display: inline;
+     }
+ }
+
+ .ingredients-item {
+     position: absolute;
+ }
+
+ .item1 {
+     top: 0px;
+     left: 31px;
+ }
+
+ .item2 {
+     top: 164px;
+     left: 18px;
+ }
+
+ .item3 {
+     top: 365px;
+     left: 0;
+ }
+
+ .item4 {
+     top: 550px;
+     left: 21px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-descr {
+         order: 1;
+         margin-top: -233px;
+     }
+ }
+
+ .hero-btn {
+     padding: 21px;
+     margin-bottom: 16px;
+
+     max-width: 384px;
+     width: 100%;
+     height: 66px;
+
+     outline: none;
+
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 1.23;
+
+     color: var(--element-color);
+     transition: color var(--animation);
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-btn {
+         margin-bottom: 48px;
+         padding: 20px;
+
+         width: 302px;
+         height: 77px;
+
+         font-size: 30px;
+     }
+ }
+
+ .hero-btn:hover,
+ .hero-btn:focus {
+     background: var(--active-element-color)
+ }
+
+ .hero-list {
+     display: flex;
+     align-items: center;
+     margin-bottom: 24px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-list {
+         margin-bottom: 0;
+     }
+ }
+
+ .hero-list span {
+     font-weight: 600;
+     font-size: 32px;
+     line-height: 1.22;
+     margin-right: 10px;
+ }
+
+ .hero-text-one,
+ .hero-text-two {
+     display: flex;
+     align-items: center;
+ }
+
+ .hero-text-two {
+     max-width: 180px;
+ }
+
+ .hero-text-one::after {
+     content: '';
+     display: flex;
+     height: 70px;
+     border: 1px solid #F3F3F3;
+
+     margin-left: 12px;
+     margin-right: 12px;
+ }
+
+ .hero-media-icons {
+     display: flex;
+     gap: 24px;
+     justify-content: center;
+
+ }
+
+ @media only screen and (min-width: 1140px) {
+     .hero-media-icons {
+         display: flex;
+         gap: 32px;
+         flex-direction: column;
+         justify-content: center;
+
+         margin-left: auto;
+     }
+ }
+
+ .hero-media-icons a {
+     fill: currentColor;
+     transition: fill var(--animation);
+ }
+
+ .hero-media-icons a:hover,
+ .hero-media-icons a:focus {
+     fill: var(--active-element-color);
+ }
+
+ .hero-media-icons svg {
+     width: 16px;
+     height: 16px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+     .hero-media-icons svg {
+         width: 24px;
+         height: 24px;
+     }
+ }
