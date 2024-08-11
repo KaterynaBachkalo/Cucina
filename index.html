@@ -2,84 +2,878 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vanilla-app-template/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Cucina/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Cucina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
     
-    <script type="module" crossorigin src="/vanilla-app-template/assets/index-fac82e35.js"></script>
-    <link rel="stylesheet" href="/vanilla-app-template/assets/index-10c40100.css">
+    <script type="module" crossorigin src="/Cucina/assets/index-cfbe5379.js"></script>
+    <link rel="stylesheet" href="/Cucina/assets/index-72c15b8d.css">
   </head>
   <body>
-    <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+    <main>
+      <header class="header">
+  <div class="header-container container">
+    <a class="header-logo js-close-menu" href="#"><svg width="32" height="32">
+            <svg class="icon-logo" width="" height="">
+              <use class="" href="/Cucina/assets/icons-09edf11e.svg#icon-logo"></use>
+            </svg><span>CUCINA</span> 
+    </a>
+    <nav class="header-nav">
+      <ul class="header-list">
+        <li class="header-item"><a href="#">Home</a></li>
+        <li class="header-item"><a href="#store">Store</a></li>
+        <li class="header-item"><a href="#recipes">Recipes</a></li>
+        <li class="header-item"><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+    <div class="contact">
+    <button class="header-btn btn" type="button" data-modal-open>Contact us</button>
+    </div>
+    <button class="menu-toggle js-open-menu"  
+    aria-expanded="false" aria-controls="mobile-menu"
+      aria-label="Open and close the navigation menu">
+      <svg width="31" height="16">
+        <use class="icon-menu" href="/Cucina/assets/icons-09edf11e.svg#burger">
+        </use>
+        <use class="icon-close" href="/Cucina/assets/icons-09edf11e.svg#xclose">
+        </use>
+      </svg>
+    </button>
+    </div>
+</header>
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
+<!-- Mobile menu -->
+<div class="menu-container js-menu-container" id="mobile-menu">
+  <nav class="menu-nav">
+    <ul class="menu-list">
+      <li class="menu-item">
+        <a href="#" class="menu-link js-close-menu">Home</a>
+      </li>
+      <li class="menu-item">
+        <a href="#store" class="menu-link js-close-menu">Store</a>
+      </li>
+      <li class="menu-item">
+        <a href="#recipes" class="menu-link js-close-menu">Recipes</a>
+      </li>
+      <li class="menu-item">
+        <a href="#gallery" class="menu-link js-close-menu">Gallery</a>
       </li>
     </ul>
   </nav>
-</header>
+  <div class="menu-contact">
+    <button class="header-btn btn" type="button" data-modal-contact-open>Contact us</button>
+  </div>
+</div>
+      <!-- is-hidden -->
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal">
+    <button
+      class="modal-close-btn js-close-menu"
+      type="button"
+      data-modal-close
+    >
+      <svg class="modal-icon" width="17" height="17">
+        <use href="../img/icons.svg#xclose"></use>
+      </svg>
+    </button>
+    <strong class="modal-title"
+      >Leave your contacts and we will call you back</strong
+    >
+    <form class="modal-form" name="contact-form">
+      <label class="modal-form-label" for="user_name">Name</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="text"
+          name="user_name"
+          id="user_name"
+          placeholder="Yuliia"
+          required
+          minlength="2"
+        />
+      </div>
+      <label class="modal-form-label" for="user_phone">Phone</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="tel"
+          name="user_phone"
+          id="user_phone"
+          placeholder="+380"
+          required
+          minlength="12"
+          maxlength="12"
+        />
+      </div>
+      <label class="modal-form-label" for="user_email">Email</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="email"
+          name="user_email"
+          id="user_email"
+          placeholder="Contact@gmail.com"
+          required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])"
+        />
+      </div>
 
+      <label class="modal-form-label" for="user_message">Comment</label>
+      <textarea
+        class="modal-form-message"
+        name="user_message"
+        rows="5"
+        placeholder="How can we help you?"
+      ></textarea>
 
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="/vanilla-app-template/assets/javascript-8dac5379.svg" alt="" />
-    </section>
+      <button class="modal-btn btn" type="submit">Contact us</button>
+    </form>
+  </div>
+</div>
 
-    <!-- Loads the specified .html file -->
-    <section class="vite-promo">
-  <div class="container">
-    <div class="wrapper">
-      <h2 class="title">
-        <span class="gradient">Vite</span>
-      </h2>
-      <p class="text">Next Generation Frontend Tooling</p>
-      <p class="tagline">
-        Get ready for a development environment that can finally catch up with
-        you.
-      </p>
+      <section class="hero">
+  <div class="hero-container container">
+    <div class="hero-wrapper">
+      <div class="hero-mob">
+        <div class="hero-left-side">
+          <h1 class="hero-title">CUCINA DI CATHERINA</h1>
+          <p class="hero-text">
+            We know,<br />
+            you will <span>love</span> our product
+          </p>
+        </div>
+        <div class="hero-picture">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="/Cucina/assets/ketchup_tab-desk@1x-b5080128.png 1x, /Cucina/assets/ketchup_tab-desk@2x-7bba7350.png 2x"
+              type="image/png"
+            />
+            <source
+              media="(min-width: 414px)"
+              srcset="/Cucina/assets/ketchup_mob@1x-a179cb17.png 1x, /Cucina/assets/ketchup_mob@2x-25a7d703.png 2x"
+              type="image/png"
+            />
+            <img
+              src="/Cucina/assets/ketchup_mob@1x-a179cb17.png"
+              alt="ketchup"
+              width="186"
+              height="356"
+              loading="lazy"
+            />
+          </picture>
 
-      <ul class="actions">
-        <li class="action">
-          <a
-            class="link"
-            href="https://vitejs.dev/guide/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Get Started</a
-          >
-        </li>
-        <li class="action">
-          <a
-            class="link"
-            href="https://github.com/vitejs/vite"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View on GitHub</a
-          >
-        </li>
-      </ul>
+          <ul class="ingredients-list">
+            <li class="ingredients-item item1">ITALY TOMATOES</li>
+            <li class="ingredients-item item2">FRESH GARLIC</li>
+            <li class="ingredients-item item3">WHITE WINE</li>
+            <li class="ingredients-item item4">FRESH BASIL</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-descr">
+        <button class="hero-btn btn" type="button" data-modal-order-open>
+          Buy now
+        </button>
+        <ul class="hero-list">
+          <li class="hero-item">
+            <p class="hero-text-one"><span>14</span>different tastes</p>
+          </li>
+          <li class="hero-item">
+            <p class="hero-text-two">
+              <span>31</span>factories around the world
+            </p>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <div class="thumb">
-      <!-- Path to images as from index.html file -->
-      <img
-        class="pic"
-        src="/vanilla-app-template/assets/vite-logo-51249ca9.png"
-        alt="Vite logo"
-        width="640"
-        height="640"
-      />
-    </div>
+    <ul class="hero-media-icons">
+      <li>
+        <a href="https://www.tumblr.com/"
+          ><svg>
+            <use href="/Cucina/assets/icons-09edf11e.svg#icon-tumblr"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/"
+          ><svg>
+            <use href="/Cucina/assets/icons-09edf11e.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/"
+          ><svg>
+            <use href="/Cucina/assets/icons-09edf11e.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/"
+          ><svg>
+            <use class="icon" href="/Cucina/assets/icons-09edf11e.svg#icon-twitter"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
+      <!-- is-hidden -->
+<div class="backdrop is-hidden" data-modal-order>
+  <div class="modal">
+    <button class="modal-close-btn" type="button" data-modal-order-close>
+      <svg class="modal-icon" width="17" height="17">
+        <use href="../img/icons.svg#xclose"></use>
+      </svg>
+    </button>
+    <strong class="modal-order-title">Your ordering</strong>
+    <form class="modal-form" name="contact-form">
+      <label class="modal-form-label" for="user_name">Surname</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="text"
+          name="user_surname"
+          id="user_surname"
+          placeholder="Krutas"
+          required
+          minlength="2"
+        />
+        <svg class="modal-form-icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-user"></use>
+        </svg>
+      </div>
+      <label class="modal-form-label" for="user_name">Name</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="text"
+          name="user_name"
+          id="user_name"
+          placeholder="Yuliia"
+          required
+          minlength="2"
+        />
+        <svg class="modal-form-icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-user"></use>
+        </svg>
+      </div>
+      <label class="modal-form-label" for="user_phone">Telephone</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="tel"
+          name="user_phone"
+          id="user_phone"
+          placeholder="+380"
+          required
+          minlength="13"
+          maxlength="13"
+        />
+      </div>
+      <label class="modal-form-label" for="cities">City</label>
+      <div class="modal-form-field">
+        <select class="modal-form-input" name="cities" id="cities">
+          <option value="Kyiv">Kyiv</option>
+          <option value="Kharkiv">Kharkiv</option>
+          <option value="Odesa">Odesa</option>
+          <option value="Lviv">Lviv</option>
+        </select>
+      </div>
 
+      <label class="modal-form-agreement">
+        <input
+          class="modal-form-agreement-box"
+          type="checkbox"
+          name="user_agreement"
+        />
+        <span class="modal-form-agreement-text"> Do not call to confirm </span>
+      </label>
+
+      <button class="modal-btn btn" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+      <!-- Vertical Slider main container -->
+<section class="vertical-slides-section" id="store">
+  <div class="swiper vertical-swiper-container container">
+    <!-- Slides -->
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide-sauces">
+        <ul>
+          <li class="sauces">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="/Cucina/assets/img1_tab-desk@1x-73b8ff6f.png 1x, /Cucina/assets/img1_tab-desk@2x-1d8d1454.png 2x"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 414px)"
+                srcset="/Cucina/assets/img1_mob@1x-0df1d353.png 1x, /Cucina/assets/img1_mob@2x-30727180.png 2x"
+                type="image/png"
+              />
+              <img
+                class="sauces-img"
+                src="/Cucina/assets/img1_mob@1x-0df1d353.png"
+                alt="Classic sauce"
+                width="156"
+                height="156"
+                loading="lazy"
+              />
+            </picture>
+            <div class="sauces-descr">
+              <h3>Classic sauce</h3>
+              <p>
+                The most delicate taste of tomatoes, combined with branded
+                spices and white wine, will make your dish incredibly tasty.
+              </p>
+              <button class="sauces-btn btn" type="button">Buy now</button>
+            </div>
+          </li>
+          <li class="sauces">
+            <div class="sauces-descr">
+              <h3>Spicy sauce</h3>
+              <p>
+                For thrill-seekers, we added hot chili pepper to our sauce, it
+                also reveals all the tastes and aromas of the sauce well.
+              </p>
+              <button class="sauces-btn btn" type="button">Buy now</button>
+            </div>
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="/Cucina/assets/img2_tab-desk@1x-f867dfd5.png 1x, /Cucina/assets/img2_tab-desk@2x-0d3f1442.png 2x"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 414px)"
+                srcset="/Cucina/assets/img2_mob@1x-f7305835.png 1x, /Cucina/assets/img2_mob@2x-c6506ea2.png 2x"
+                type="image/png"
+              />
+              <img
+                class="sauces-img"
+                src="/Cucina/assets/img2_mob@1x-f7305835.png"
+                alt="Classic sauce"
+                width="156"
+                height="156"
+                loading="lazy"
+              />
+            </picture>
+          </li>
+        </ul>
+      </div>
+      <div class="swiper-slide">
+        <ul>
+          <li class="sauces">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="/Cucina/assets/img3_tab-desk@1x-0565dd72.png 1x, /Cucina/assets/img3_tab-desk@2x-c2bf0ada.png 2x"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 414px)"
+                srcset="/Cucina/assets/img3_mob@1x-2504f5ed.png 1x, /Cucina/assets/img3_mob@2x-a18fca6d.png 2x"
+                type="image/png"
+              />
+              <img
+                class="sauces-img"
+                src="/Cucina/assets/img3_mob@1x-2504f5ed.png"
+                alt="Classic sauce"
+                width="156"
+                height="156"
+                loading="lazy"
+              />
+            </picture>
+            <div class="sauces-descr">
+              <h3>Classic sauce</h3>
+              <p>
+                The most delicate taste of tomatoes, combined with branded
+                spices and white wine, will make your dish incredibly tasty.
+              </p>
+              <button class="sauces-btn btn" type="button">Buy now</button>
+            </div>
+          </li>
+          <li class="sauces">
+            <div class="sauces-descr">
+              <h3>Spicy sauce</h3>
+              <p>
+                For thrill-seekers, we added hot chili pepper to our sauce, it
+                also reveals all the tastes and aromas of the sauce well.
+              </p>
+              <button class="sauces-btn btn" type="button">Buy now</button>
+            </div>
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="/Cucina/assets/img4_tab-desk@1x-da34f67c.png 1x, /Cucina/assets/img4_tab-desk@2x-dad98f0e.png 2x"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 414px)"
+                srcset="/Cucina/assets/img4_mob@1x-0a147950.png 1x, /Cucina/assets/img4_mob@2x-57894a87.png 2x"
+                type="image/png"
+              />
+              <img
+                class="sauces-img"
+                src="/Cucina/assets/img4_mob@1x-0a147950.png"
+                alt="Classic sauce"
+                width="156"
+                height="156"
+                loading="lazy"
+              />
+            </picture>
+          </li>
+        </ul>
+      </div>
+      <div class="swiper-slide">
+        <ul>
+          <li class="sauces">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="/Cucina/assets/img5_tab-desk@1x-f312e893.png 1x, /Cucina/assets/img5_tab-desk@2x-0a6c825a.png 2x"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 414px)"
+                srcset="/Cucina/assets/img5_mob@1x-5b160a38.png 1x, /Cucina/assets/img5_mob@2x-bc54dc4a.png 2x"
+                type="image/png"
+              />
+              <img
+                class="sauces-img"
+                src="/Cucina/assets/img5_mob@1x-5b160a38.png"
+                alt="Classic sauce"
+                width="156"
+                height="156"
+                loading="lazy"
+              />
+            </picture>
+            <div class="sauces-descr">
+              <h3>Classic sauce</h3>
+              <p>
+                The most delicate taste of tomatoes, combined with branded
+                spices and white wine, will make your dish incredibly tasty.
+              </p>
+              <button class="sauces-btn btn" type="button">Buy now</button>
+            </div>
+          </li>
+          <li class="sauces">
+            <div class="sauces-descr">
+              <h3>Spicy sauce</h3>
+              <p>
+                For thrill-seekers, we added hot chili pepper to our sauce, it
+                also reveals all the tastes and aromas of the sauce well.
+              </p>
+              <button class="sauces-btn btn" type="button">Buy now</button>
+            </div>
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="/Cucina/assets/img6_tab-desk@1x-3de183cb.png 1x, /Cucina/assets/img6_tab-desk@2x-bfaeafd3.png 2x"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 414px)"
+                srcset="/Cucina/assets/img6_mob@1x-33883e02.png 1x, /Cucina/assets/img6_mob@2x-17dafda9.png 2x"
+                type="image/png"
+              />
+              <img
+                class="sauces-img"
+                src="/Cucina/assets/img6_mob@1x-33883e02.png"
+                alt="Classic sauce"
+                width="156"
+                height="156"
+                loading="lazy"
+              />
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- If we need pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="container">
+    <h2 hidden>Lorem, ipsum dolor.</h2>
+    <ul>
+      <li class="sauces">
+        <img
+          class="sauces-item1"
+          src="../img/sauces/img1.png"
+          alt="Classic sauce"
+          width="349"
+          height="349"
+        />
+        <h3>Classic sauce</h3>
+        <p>
+          The most delicate taste of tomatoes, combined with branded spices and
+          white wine, will make your dish incredibly tasty.
+        </p>
+        <a href="">Buy now</a>
+      </li>
+      <li>
+        <h3>Spicy sauce</h3>
+        <p>
+          For thrill-seekers, we added hot chili pepper to our sauce, it also
+          reveals all the tastes and aromas of the sauce well.
+        </p>
+        <a href="">Buy now</a>
+        <img
+          src="../img/sauces/img2.png"
+          alt="Spicy sauce"
+          width="349"
+          height="349"
+        />
+      </li>
+    </ul>
+  </div>
+</section> -->
+
+      <section class="video-section" id="recipes">
+  <div class="container video-container">
+    <h2 hidden>Lorem, ipsum dolor.</h2>
+    <ul class="video-list">
+      <li class="video-item">
+        <!-- <iframe
+              width="442"
+              height="307"
+              src="https://www.youtube.com/embed/VCAyX1qduc8"
+              title="Bell pepper pasta"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe> -->
+        <video
+          class="video"
+          src="https://www.youtube.com/embed/VCAyX1qduc8"
+          poster="/Cucina/assets/poster1_tab-af65f6c1.jpg"
+          width="442"
+          controls
+          autoplay
+          loop
+          preload="auto"
+        >
+          Your browser does not support the <code>video</code> element.
+        </video>
+        <h3>Bell pepper pasta</h3>
+      </li>
+
+      <li class="video-item">
+        <!-- <iframe
+            width="442"
+            height="307"
+            src="https://www.youtube.com/embed/ctRo3pmFaKQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe> -->
+        <video
+          class="video"
+          src="https://www.youtube.com/embed/ctRo3pmFaKQ"
+          poster="/Cucina/assets/poster2_tab-06492caa.jpg"
+          width="442"
+          height="307"
+          controls
+          autoplay
+          loop
+          preload="auto"
+        >
+          Your browser does not support the <code>video</code> element.
+        </video>
+        <h3>Tomato paste</h3>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <!-- Horisontal Slider main container -->
+<section class="horisontal-slides-section" id="gallery">
+  <div class="swiper horisontal-swiper-container container">
+    <!-- Slides -->
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <picture>
+          <source
+            media="(min-width: 1140px)"
+            srcset="/Cucina/assets/slide1_desk@1x-96dc7d85.jpg 1x, /Cucina/assets/slide1_desk@2x-d6b7ca45.jpg 2x"
+            type="image/jpg"
+          />
+          <source
+            media="(min-width: 1024px)"
+            srcset="/Cucina/assets/slide1_tab@1x-ccb21cfd.jpg 1x, /Cucina/assets/slide1_tab@2x-fa13d11c.jpg 2x"
+            type="image/jpg"
+          />
+          <source
+            media="(max-width: 1023px)"
+            srcset="/Cucina/assets/slide1_mob@1x-ac08c533.jpg 1x, /Cucina/assets/slide1_mob@2x-3dfa291b.jpg 2x"
+            type="image/jpg"
+          />
+          <img
+            src="/Cucina/assets/slide1_mob@1x-ac08c533.jpg"
+            alt="Tomatos in the hands"
+            width="336"
+            height="226"
+          />
+        </picture>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <source
+            media="(min-width: 1140px)"
+            srcset="/Cucina/assets/slide2_desk@1x-a4ed7dcf.jpg 1x, /Cucina/assets/slide2_desk@2x-73631fd7.jpg 2x"
+            type="image/jpg"
+          />
+          <source
+            media="(min-width: 1024px)"
+            srcset="/Cucina/assets/slide2_tab@1x-18eb71b0.jpg 1x, /Cucina/assets/slide2_tab@2x-dd08a574.jpg 2x"
+            type="image/jpg"
+          />
+          <source
+            media="(max-width: 1023px)"
+            srcset="/Cucina/assets/slide2_mob@1x-63780182.jpg 1x, /Cucina/assets/slide2_mob@2x-b5dde3bf.jpg 2x"
+            type="image/jpg"
+          />
+          <img
+            src="/Cucina/assets/slide2_mob@1x-63780182.jpg"
+            alt="Tomatos in the hands"
+            width="336"
+            height="226"
+          />
+        </picture>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <source
+            media="(min-width: 1140px)"
+            srcset="/Cucina/assets/slide3_desk@1x-d89fcb81.jpg 1x, /Cucina/assets/slide3_desk@2x-83bbea24.jpg 2x"
+            type="image/jpg"
+          />
+          <source
+            media="(min-width: 1024px)"
+            srcset="/Cucina/assets/slide3_tab@1x-bd984114.jpg 1x, /Cucina/assets/slide3_tab@2x-5660cd7e.jpg 2x"
+            type="image/jpg"
+          />
+          <source
+            media="(max-width: 1023px)"
+            srcset="/Cucina/assets/slide3_mob@1x-f4e021cd.jpg 1x, /Cucina/assets/slide3_mob@2x-da345151.jpg 2x"
+            type="image/jpg"
+          />
+          <img
+            src="/Cucina/assets/slide3_mob@1x-f4e021cd.jpg"
+            alt="Tomatos in the hands"
+            width="336"
+            height="226"
+          />
+        </picture>
+      </div>
+    </div>
+
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+    </main>
+    <footer>
+  <footer class="footer-section">
+    <div class="footer-container container">
+      <div class="footer-wrapper">
+        <a class="logo" href="./index.html"
+          ><svg width="32" height="32">
+            <use href="/Cucina/assets/icons-09edf11e.svg#icon-logo"></use></svg
+          >CUCINA
+        </a>
+        <div class="footer-wrapper-mob">
+          <div class="footer-wrapper-list">
+            <ul class="footer-list">
+              <li><a href="">Home</a></li>
+              <li><a href="">Store</a></li>
+              <li><a href="">Recipes</a></li>
+              <li><a href="">Gallery</a></li>
+            </ul>
+
+            <ul class="footer-address" id="contacts">
+              <li class="footer-address-list">
+                <a class="footer-address-link" href="">
+                  <svg class="footer-address-icon" width="24" height="24">
+                    <use class="" href="/Cucina/assets/icons-09edf11e.svg#icon-location"></use>
+                  </svg>
+                  Elvia Elviaveien 1, 1234 Oslo</a
+                >
+              </li>
+              <li class="footer-address-list">
+                <a
+                  class="footer-address-link"
+                  href="mailto:willie.jennings@example.com"
+                  ><svg class="footer-address-icon" width="24" height="24">
+                    <use href="/Cucina/assets/icons-09edf11e.svg#icon-email"></use>
+                  </svg>
+                  willie.jennings@example.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <ul class="footer-media-icons">
+            <li>
+              <a href="https://www.tumblr.com/"
+                ><svg width="24" height="24">
+                  <use href="/Cucina/assets/icons-09edf11e.svg#icon-tumblr"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/"
+                ><svg width="24" height="24">
+                  <use href="/Cucina/assets/icons-09edf11e.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/"
+                ><svg width="24" height="24">
+                  <use href="/Cucina/assets/icons-09edf11e.svg#icon-youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/"
+                ><svg width="24" height="24">
+                  <use class="icon" href="/Cucina/assets/icons-09edf11e.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="agreement">
+        By using this website, you agree to the
+        <a class="links" href="">Terms of Service</a> and
+        <a class="links" href="">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+</footer>
+
+    <div class="overlay js-overlay-modal">
+      <!-- is-hidden -->
+<div class="backdrop is-hidden" data-modal-order>
+  <div class="modal">
+    <button class="modal-close-btn" type="button" data-modal-order-close>
+      <svg class="modal-icon" width="17" height="17">
+        <use href="../img/icons.svg#xclose"></use>
+      </svg>
+    </button>
+    <strong class="modal-order-title">Your ordering</strong>
+    <form class="modal-form" name="contact-form">
+      <label class="modal-form-label" for="user_name">Surname</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="text"
+          name="user_surname"
+          id="user_surname"
+          placeholder="Krutas"
+          required
+          minlength="2"
+        />
+        <svg class="modal-form-icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-user"></use>
+        </svg>
+      </div>
+      <label class="modal-form-label" for="user_name">Name</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="text"
+          name="user_name"
+          id="user_name"
+          placeholder="Yuliia"
+          required
+          minlength="2"
+        />
+        <svg class="modal-form-icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-user"></use>
+        </svg>
+      </div>
+      <label class="modal-form-label" for="user_phone">Telephone</label>
+      <div class="modal-form-field">
+        <input
+          class="modal-form-input"
+          type="tel"
+          name="user_phone"
+          id="user_phone"
+          placeholder="+380"
+          required
+          minlength="13"
+          maxlength="13"
+        />
+      </div>
+      <label class="modal-form-label" for="cities">City</label>
+      <div class="modal-form-field">
+        <select class="modal-form-input" name="cities" id="cities">
+          <option value="Kyiv">Kyiv</option>
+          <option value="Kharkiv">Kharkiv</option>
+          <option value="Odesa">Odesa</option>
+          <option value="Lviv">Lviv</option>
+        </select>
+      </div>
+
+      <label class="modal-form-agreement">
+        <input
+          class="modal-form-agreement-box"
+          type="checkbox"
+          name="user_agreement"
+        />
+        <span class="modal-form-agreement-text"> Do not call to confirm </span>
+      </label>
+
+      <button class="modal-btn btn" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+      ENOENT: no such file or directory, open '/home/runner/work/Cucina/Cucina/src/partials/modal-thx.html'
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
     
   </body>
 </html>
