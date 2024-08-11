@@ -1,0 +1,90 @@
+:root {
+    --body-bg-color: #100F0F;
+    --element-color: #F3F3F3;
+    --button-color: rgba(188, 26, 26, 0.2);
+    --active-element-color: rgba(188, 26, 26, 0.5);
+    --animation: 250ms ease-in-out;
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: var(--swiper-theme-color);
+    --horisontal-swiper-container-height: 582px;
+    --swiper-pagination-bullet-size: 8px;
+}
+
+body {
+    font: 400 16px/1.25 'Montserrat', sans-serif;
+    color: var(--element-color);
+    background-color: var(--body-bg-color);
+    box-sizing: border-box;
+    /* background: linear-gradient(256.51deg, rgba(111, 102, 102, 0.9) 26.96%, rgba(16, 15, 15, 0.9) 79.08%, rgba(16, 15, 15, 0.9) 79.08%); */
+}
+
+.container {
+    max-width: 414px;
+    min-width: 320px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 414px) {
+    .container {
+        max-width: 414px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+        padding: 0 46px;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .container {
+        max-width: 1140px;
+        padding: 0 15px;
+    }
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    display: block;
+    background: var(--button-color);
+    border: 1px solid var(--button-color);
+    border-radius: 16px;
+    color: var(--element-color);
+}
+
+svg {
+    fill: currentColor;
+}
+
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
